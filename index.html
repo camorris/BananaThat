@@ -17,7 +17,8 @@
         <h2 id="points">Score: 0</h2>
         <h3 id="timeLeft">Time Left: 15 seconds</h3>
         <button id="clear">Reset</button>
-        <button id="start">Banana</button><div id="turn">
+        <button id="start">Banana</button>
+        <div id="turn">
             <div class="turn_a">Player A</div>
             <div class="turn_b">Player B</div>
         </div>
@@ -61,6 +62,7 @@
         newBanana.on('click', function(){
         newBanana.toggleClass('light-on')
         var banana = $('<div>').addClass('banana').append('<img src="banana.jpg"/>')
+        
     
             // above div tellsjquery we want to create this element
             // $('body').append('<div class="planet"></div>')
@@ -82,8 +84,8 @@
                     banana.animate({
                         left: Math.random() * 1000,
                         top: Math.random() * 500,
-                         }, 1000)
-                    }, 1000)
+                         }, 500)
+                    }, 500)
                 
                 })
                 $('#button').on('click', function(){
@@ -95,15 +97,19 @@
             seconds = seconds - 1
             timeLeftElement.innerHTML = "Time Left: " + seconds + " seconds"
             if (seconds <= 0){
-                clearInterval( theIntervalId )
-                alert("Your score is " + score)
-            }
+                clearInterval( theIntervalId );
+                alert("Your score is " + score);
+                $('#turn').toggleClass('a');
+                
+                
+            } 
         }
         var theIntervalId = setInterval(countDown, 1000)
 
         resetBtn.addEventListener('click', function(){
                 score = 0
-                pointsElement.innerText = "Score: 0" 
+                pointsElement.innerText = "Score: 0"
+                
                 
 
             //reset timer
