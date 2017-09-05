@@ -4,26 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Project 1</title>
     <link rel="stylesheet" href="css/styles.css">
     <script
     src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
+
 </head>
 <body>
-    <button id="new-planet">Create Planet</button>
-    <h2>Score</h2>
-    <h3 id="timeLeft">Time Left: 15 seconds</h3>
-   
-
-    
-    
+        <h1> Banana That <h1>
+        <h2 id="points">Score: 0</h2>
+        <h3 id="timeLeft">Time Left: 15 seconds</h3>
+        <button id="clear">Reset</button>
+        <button id="start">Banana</button>
+        
     <script>
-
-        // var newPlanet = document.querySelector('#new-plane')
-        var seconds = 10
+        // This line of Code is responsible for the CountDown and Reset Button//
         var timeLeftElement = document.querySelector('#timeLeft')
+        var resetBtn = document.querySelector('#clear')
+        var pointsElement = document.querySelector('#points')
+
+        var seconds = 15
         function countDown(){
             seconds = seconds - 1
             timeLeftElement.innerHTML = "Time Left: " + seconds + " seconds"
@@ -32,38 +34,45 @@
                 alert("Your score is " + score)
             }
         }
-        var newPlanet= $('#new-planet')
-        newPlanet.on('click', function(){
-        newPlanet.toggleClass('light-on')
-        var planet = $('<div>').addClass('planet').text('EARTH')
+        var theIntervalId = setInterval(countDown, 1000)
+
+        resetBtn.addEventListener('click', function(){
+    
+            score = 0 
+            pointsElement.innerText = "Score: 0" 
+
+            //reset timer
+            seconds = 10
+            timeLeftElement.innerHTML = "Time Left: " + seconds + " seconds"
+            clearInterval(theIntervalId)
+            theIntervalId = setInterval(countDown, 1000)
+            
+ })
+ //--------------------------------------------------------------------------//
+
+ //These lines of code if for the Banana collection
+ var newBanana= $('#start')
+        newBanana.on('click', function(){
+        newBanana.toggleClass('light-on')
+        var banana = $('<div>').addClass('banana').text('banana')
             // above div tellsjquery we want to create this element
             // $('body').append('<div class="planet"></div>')
             
-            planet.css({
+            banana.css({
                  left: Math.random() * 500,
                  top: Math.random() * 500,
                  })
             
-                $('body').append(planet)
-                planet.fadeIn('fast')
-                // // planet.on('click', function() {
-                    setInterval(function(){
-                    planet.animate({
+                $('body').append(banana)
+                banana.fadeIn('fast')
+                setInterval(function(){
+                    banana.animate({
                         left: Math.random() * 1000,
                         top: Math.random() * 500,
-                         }, 1000)
-                    }, 2000)
+                         }, 500)
+                    }, 500)
+                })
   
-     
-                // })
-
-          })
-         
-       
-        // var buttons = $('button')
-        // buttons.on('click', function () {
-        //     console.log("button clicked")
-        // })
     </script>
 </body>
 </html>
