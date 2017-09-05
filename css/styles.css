@@ -1,0 +1,11 @@
+.planet {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 100px 100px, #55F1C6, #000);
+    display: none;
+    position: absolute;
+}
+.light-on{
+    background-color: yellow;
+}
