@@ -18,15 +18,72 @@
         <h3 id="timeLeft">Time Left: 15 seconds</h3>
         <button id="clear">Reset</button>
         <button id="start">Banana</button>
+        <hr>
+
         
     <script>
         // This line of Code is responsible for the CountDown and Reset Button//
         var timeLeftElement = document.querySelector('#timeLeft')
         var resetBtn = document.querySelector('#clear')
         var pointsElement = document.querySelector('#points')
-
+        var score = 0 
         var seconds = 15
-        function countDown(){
+
+        
+//         function countDown(){
+//             seconds = seconds - 1
+//             timeLeftElement.innerHTML = "Time Left: " + seconds + " seconds"
+//             if (seconds <= 0){
+//                 clearInterval( theIntervalId )
+//                 alert("Your score is " + score)
+//             }
+//         }
+//         var theIntervalId = setInterval(countDown, 1000)
+
+//         resetBtn.addEventListener('click', function(){
+//                 pointsElement.innerText = "Score: 0" 
+
+//             //reset timer
+//             seconds = 10
+//             timeLeftElement.innerHTML = "Time Left: " + seconds + " seconds"
+//             clearInterval(theIntervalId)
+//             theIntervalId = setInterval(countDown, 1000)
+            
+//  })
+ //--------------------------------------------------------------------------//
+
+ //These lines of code if for the Banana collection
+        var newBanana= $('#start')
+        newBanana.on('click', function(){
+        newBanana.toggleClass('light-on')
+        var banana = $('<div>').addClass('banana').append('<img src="banana.jpg"/>')
+        var score = 0
+            // above div tellsjquery we want to create this element
+            // $('body').append('<div class="planet"></div>')
+            banana.on('click', function(){
+                score = score + 10
+                pointsElement.innerHTML = "Score: " + score 
+                
+
+            })
+            banana.css({
+                 left: Math.random() * 500,
+                 top: Math.random() * 500,
+                 })
+            
+                $('body').append(banana)
+                banana.fadeIn('fast')
+
+                setInterval(function(){
+                    banana.animate({
+                        left: Math.random() * 1000,
+                        top: Math.random() * 500,
+                         }, 1000)
+                    }, 1000)
+                
+                })
+
+                function countDown(){
             seconds = seconds - 1
             timeLeftElement.innerHTML = "Time Left: " + seconds + " seconds"
             if (seconds <= 0){
@@ -37,41 +94,16 @@
         var theIntervalId = setInterval(countDown, 1000)
 
         resetBtn.addEventListener('click', function(){
-    
-            score = 0 
-            pointsElement.innerText = "Score: 0" 
+                score = 0
+                pointsElement.innerText = "Score: 0" 
 
             //reset timer
-            seconds = 10
+            seconds = 15
             timeLeftElement.innerHTML = "Time Left: " + seconds + " seconds"
             clearInterval(theIntervalId)
             theIntervalId = setInterval(countDown, 1000)
             
  })
- //--------------------------------------------------------------------------//
-
- //These lines of code if for the Banana collection
- var newBanana= $('#start')
-        newBanana.on('click', function(){
-        newBanana.toggleClass('light-on')
-        var banana = $('<div>').addClass('banana').text('banana')
-            // above div tellsjquery we want to create this element
-            // $('body').append('<div class="planet"></div>')
-            
-            banana.css({
-                 left: Math.random() * 500,
-                 top: Math.random() * 500,
-                 })
-            
-                $('body').append(banana)
-                banana.fadeIn('fast')
-                setInterval(function(){
-                    banana.animate({
-                        left: Math.random() * 1000,
-                        top: Math.random() * 500,
-                         }, 500)
-                    }, 500)
-                })
   
     </script>
 </body>
