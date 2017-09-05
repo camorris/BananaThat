@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Project 1</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script
-    src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Project 1</title>
+<link rel="stylesheet" href="css/styles.css">
+<script
+src="https://code.jquery.com/jquery-3.2.1.min.js"
+integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+crossorigin="anonymous"></script>
 
 </head>
 <body>
-        <h1> Banana That <h1>
-        <h2 id="points">Score: 0</h2>
-        <h3 id="timeLeft">Time Left: 15 seconds</h3>
-        <button id="clear">Reset</button>
-        <button id="start">Banana</button>
-        <div id="turn">
-            <div class="turn_a">Player A</div>
-            <div class="turn_b">Player B</div>
-        </div>
-        <button id="button">Change turn</button>
-        <hr>
+<h1> Banana That <h1>
+<h2 id="points">Score: 0</h2>
+<h3 id="timeLeft">Time Left: 15 seconds</h3>
+<button id="clear">Reset</button>
+<button id="start">Banana</button>
+<div id="turn">
+<div class="turn_a">Player A</div>
+<div class="turn_b">Player B</div>
+</div>
+<button id="button">Change turn</button>
+<hr>
 
-        
-    <script>
-        // This line of Code is responsible for the CountDown and Reset Button//
-        var timeLeftElement = document.querySelector('#timeLeft')
-        var resetBtn = document.querySelector('#clear')
-        var pointsElement = document.querySelector('#points')
-        var score = 0 
-        var seconds = 15
 
-        
+<script>
+// This line of Code is responsible for the CountDown and Reset Button//
+var timeLeftElement = document.querySelector('#timeLeft')
+var resetBtn = document.querySelector('#clear')
+var pointsElement = document.querySelector('#points')
+var score = 0 
+var seconds = 15
+
+
 //         function countDown(){
 //             seconds = seconds - 1
 //             timeLeftElement.innerHTML = "Time Left: " + seconds + " seconds"
@@ -53,74 +53,76 @@
 //             timeLeftElement.innerHTML = "Time Left: " + seconds + " seconds"
 //             clearInterval(theIntervalId)
 //             theIntervalId = setInterval(countDown, 1000)
-            
+
 //  })
- //--------------------------------------------------------------------------//
+//--------------------------------------------------------------------------//
 
- //These lines of code if for the Banana collection
-        var newBanana= $('#start')
-        newBanana.on('click', function(){
-        newBanana.toggleClass('light-on')
-        var banana = $('<div>').addClass('banana').append('<img src="banana.jpg"/>')
-        
-    
-            // above div tellsjquery we want to create this element
-            // $('body').append('<div class="planet"></div>')
-            banana.on('click', function(){
-                score = score + 10
-                pointsElement.innerHTML = "Score: " + score 
-                
+//These lines of code if for the Banana collection
+var newBanana= $('#start')
+newBanana.on('click', function(){
+newBanana.toggleClass('light-on')
+var banana = $('<div>').addClass('banana').append('<img src="banana.jpg"/>')
 
-            })
-            banana.css({
-                 left: Math.random() * 500,
-                 top: Math.random() * 500,
-                 })
-            
-                $('body').append(banana)
-                banana.fadeIn('fast')
 
-                setInterval(function(){
-                    banana.animate({
-                        left: Math.random() * 1000,
-                        top: Math.random() * 500,
-                         }, 500)
-                    }, 500)
-                
-                })
-                $('#button').on('click', function(){
-    $('#turn').toggleClass('a');
+// above div tellsjquery we want to create this element
+// $('body').append('<div class="planet"></div>')
+banana.on('click', function(){
+score = score + 10
+pointsElement.innerHTML = "Score: " + score 
+
+
+})
+banana.css({
+left: Math.random() * 500,
+top: Math.random() * 500,
+})
+
+$('body').append(banana)
+banana.fadeIn('fast')
+
+setInterval(function(){
+banana.animate({
+    left: Math.random() * 1000,
+    top: Math.random() * 500,
+        }, 1000)
+}, 1000)
+
+})
+$('#button').on('click', function(){
+$('#turn').toggleClass('a');
 });
 
 
-                function countDown(){
-            seconds = seconds - 1
-            timeLeftElement.innerHTML = "Time Left: " + seconds + " seconds"
-            if (seconds <= 0){
-                clearInterval( theIntervalId );
-                alert("Your score is " + score);
-                $('#turn').toggleClass('a');
-                
-                
-            } 
-        }
-        var theIntervalId = setInterval(countDown, 1000)
+function countDown(){
+    seconds = seconds - 1
+    console.log(seconds)
+    timeLeftElement.innerHTML = "Time Left: " + seconds + " seconds"
+    if (seconds <= 0){
+        clearInterval( theIntervalId );
+        alert("Your score is " + score);
+        $('#turn').toggleClass('a');
+        theIntervalId = setInterval(countDown, 1000)
+        seconds = 15
+        timeLeftElement.innerHTML = "Time Left: " + seconds + " seconds"
+        score = 0
+        pointsElement.innerText = "Score: 0"
+    } 
+}
+var theIntervalId = setInterval(countDown, 1000)
 
-        resetBtn.addEventListener('click', function(){
-                score = 0
-                pointsElement.innerText = "Score: 0"
-                
-                
+resetBtn.addEventListener('click', function(){
+    score = 0
+    pointsElement.innerText = "Score: 0"
 
-            //reset timer
-            seconds = 15
-            timeLeftElement.innerHTML = "Time Left: " + seconds + " seconds"
-            clearInterval(theIntervalId)
-            theIntervalId = setInterval(countDown, 1000)
 
-            
- })
-  
-    </script>
+
+    //reset timer
+    seconds = 15
+    timeLeftElement.innerHTML = "Time Left: " + seconds + " seconds"
+    clearInterval(theIntervalId)
+    theIntervalId = setInterval(countDown, 1000)
+})
+
+</script>
 </body>
 </html>
