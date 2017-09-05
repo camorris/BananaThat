@@ -7,3 +7,6 @@
 .light-on{
     background-color: yellow;
 }
+#turn .turn_a{display:none}
+#turn.a .turn_a{display:block}
+#turn.a .turn_b{display:none}
