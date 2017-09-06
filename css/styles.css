@@ -1,5 +1,7 @@
 h1{
     font-family: 'Rancho';
+    font-size: 60px;
+    text-align: center;
 }
 
 .banana {
@@ -8,13 +10,48 @@ h1{
     display: none;
     position: absolute;
 }
+#pointsA{
+max-width: 500px;
+}
+#pointsB{
+
+}
+#start{
+    background: #fff200;
+    background-image: -webkit-linear-gradient(top, #fff200, #c49016);
+    background-image: -moz-linear-gradient(top, #fff200, #c49016);
+    background-image: -ms-linear-gradient(top, #fff200, #c49016);
+    background-image: -o-linear-gradient(top, #fff200, #c49016);
+    background-image: linear-gradient(to bottom, #fff200, #c49016);
+    -webkit-border-radius: 46;
+    -moz-border-radius: 46;
+    border-radius: 46px;
+    text-shadow: 5px 2px 3px #000000;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
 .light-on{
     background-color: yellow;
 }
-#turn .turn_a{display:none}
-#turn.a .turn_a{display:block}
-#turn.a .turn_b{display:none}
+#turn .turn_a{
+    display:none
+}
+#turn.a .turn_a{
+    display:block
+}
+#turn.a .turn_b{
+    display:none
+}
 
 body {
-    background-image: url("http://hddfhm.com/images/cartoon-jungle-clipart-12.jpg");
+    background-image: url("https://image.shutterstock.com/z/stock-vector-vector-cartoon-illustration-of-background-morning-jungle-bright-jungle-with-ferns-and-flowers-for-536303545.jpg");
+    font-family: 'Rancho';
+    color: white}
+
+img {
+    height: 300px;
+    width: 300px;
 }

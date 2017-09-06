@@ -49,7 +49,7 @@ var newBanana= $('#start')
 
 newBanana.on('click', function(){
 newBanana.toggleClass('light-on')
-var banana = $('<div>').addClass('banana').append('<img src="banana.jpg"/>')
+var banana = $('<div>').addClass('banana').append('<img src="newbanana.svg"/>')
 
 
 // above div tellsjquery we want to create this element
@@ -60,13 +60,13 @@ banana.on('click', function(){
     if (currentPlayer === 'playerA'){
         score = score + 10
         pointsElementA.html("Score A: " + score )
-        $('img').css({height: "-=10px"})
+        $('img').css({height: "-=10px",width:"-=20px"})
         
        
     } else if(currentPlayer === 'playerB'){
         score = score + 10
         pointsElementB.html("Score B: " + score)
-        $('img').css({height: "-=10px"})
+        $('img').css({height: "-=20px",width: "-=20px"})
 
     }
     
@@ -83,9 +83,10 @@ banana.fadeIn('fast')
 setInterval(function(){
 banana.animate({
     left: Math.random() * 1000,
-    top: Math.random() * 500,
+    top: Math.random() * 1000,
         },1000)
 }, 1000)
+
 
 
 theIntervalId = setInterval(countDown, 1000)
@@ -103,7 +104,7 @@ function countDown(){
         if (currentPlayer === "playerB"){
         playerTurn.html('Player B')}
         clearInterval( theIntervalId );
-        $('img').css({height: "194px"})
+        $('img').css({height: "300px", width: "300px"})
         alert("Your score is " + score);
         if(playerAScore == null){
             playerAScore = score
@@ -127,7 +128,7 @@ function countDown(){
         }
 
 
-        theIntervalId = setInterval(countDown, 1000)
+        theIntervalId = setInterval(countDown,1000)
         seconds = 15
         timeLeftElement.innerHTML = "Time Left: " + seconds + " seconds"
         score = 0
