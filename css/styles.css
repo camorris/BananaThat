@@ -2,8 +2,16 @@ h1{
     font-family: 'Rancho';
     font-size: 60px;
     text-align: center;
+    text-shadow: 2px 2px #000000;
 }
-
+h2{
+    display: inline-block;
+    display: inline-block;
+    -webkit-margin-before: -4.17em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 399px;
+    -webkit-margin-end: -18px;
+}
 .banana {
     width: 100px;
     height: 100px;
@@ -11,10 +19,46 @@ h1{
     position: absolute;
 }
 #pointsA{
-max-width: 500px;
+    font-size: 30px;
+    text-shadow: 2px 2px #000000;
 }
 #pointsB{
-
+    font-size: 30px;
+    text-shadow: 2px 2px #000000;
+}
+#button{
+    background: #fff200;
+    background-image: -webkit-linear-gradient(top, #fff200, #c49016);
+    background-image: -moz-linear-gradient(top, #fff200, #c49016);
+    background-image: -ms-linear-gradient(top, #fff200, #c49016);
+    background-image: -o-linear-gradient(top, #fff200, #c49016);
+    background-image: linear-gradient(to bottom, #fff200, #c49016);
+    -webkit-border-radius: 46;
+    -moz-border-radius: 46;
+    border-radius: 46px;
+    text-shadow: 5px 2px 3px #000000;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+#clear{
+    background: #fff200;
+    background-image: -webkit-linear-gradient(top, #fff200, #c49016);
+    background-image: -moz-linear-gradient(top, #fff200, #c49016);
+    background-image: -ms-linear-gradient(top, #fff200, #c49016);
+    background-image: -o-linear-gradient(top, #fff200, #c49016);
+    background-image: linear-gradient(to bottom, #fff200, #c49016);
+    -webkit-border-radius: 46;
+    -moz-border-radius: 46;
+    border-radius: 46px;
+    text-shadow: 5px 2px 3px #000000;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
 }
 #start{
     background: #fff200;
@@ -54,4 +98,13 @@ body {
 img {
     height: 300px;
     width: 300px;
+}
+h3#timeLeft {
+    -webkit-margin-before: -2em;
+    -webkit-margin-after: 2em;
+    -webkit-margin-start: 584px;
+    -webkit-margin-end: 91px;
+    text-shadow: 2px 2px #000000;
+    letter-spacing: 2px;
+    font-size: 35px;
 }
