@@ -14,3 +14,7 @@ h1{
 #turn .turn_a{display:none}
 #turn.a .turn_a{display:block}
 #turn.a .turn_b{display:none}
+
+body {
+    background-image: url("http://hddfhm.com/images/cartoon-jungle-clipart-12.jpg");
+}

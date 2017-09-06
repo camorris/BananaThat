@@ -26,7 +26,7 @@ crossorigin="anonymous"></script>
     
 
 <button id="button">Change turn</button>
-<hr>
+
 
 
 <script>
@@ -119,8 +119,10 @@ function countDown(){
             if(playerAScore > playerBScore) {
                 alert("Player 1 wins")
             }
-            else {
+            else if(playerBScore > playerAScore) {
                 alert("Player 2 wins")
+            } else { 
+                alert ("Its a Tie you both are AWESOME")
             }
         }
 
