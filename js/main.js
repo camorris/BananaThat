@@ -27,13 +27,15 @@ banana.on('click', function(){
     if (currentPlayer === 'playerA'){
         score = score + 10
         pointsElementA.html("Score A: " + score )
-        $('img').css({height: "-=10px",width:"-=20px"})
+        $('img').css({height: "-=30px",width:"-=30px"})
+        $('img').animate({})
         
        
     } else if(currentPlayer === 'playerB'){
         score = score + 10
         pointsElementB.html("Score B: " + score)
-        $('img').css({height: "-=20px",width: "-=20px"})
+        $('img').css({height: "-=30px",width: "-=30px"})
+        
 
     }
     
@@ -49,8 +51,8 @@ banana.fadeIn('fast')
 
 setInterval(function(){
 banana.animate({
-    left: Math.random() * 1000,
-    top: Math.random() * 1000,
+    left: Math.random() * 900,
+    top: Math.random() * 600,
         },1000)
 }, 1000)
 
@@ -114,6 +116,6 @@ resetBtn.on('click', function(){
     seconds = 15
     timeLeftElement.html("Time Left: " + seconds + " seconds")
     clearInterval(theIntervalId)
-    theIntervalId = setInterval(countDown, 1000)
+    // theIntervalId = setInterval(countDown, 1000)
     
 })

@@ -12,6 +12,14 @@ h2{
     -webkit-margin-start: 399px;
     -webkit-margin-end: -18px;
 }
+txt.turn {
+    font-size: 40px;
+    text-shadow: 2px 2px #000000;
+    display: inline-block;
+    position: relative;
+    left: 430px;
+    top: -63px;
+}
 .banana {
     width: 100px;
     height: 100px;
@@ -94,10 +102,14 @@ body {
     background-image: url("https://image.shutterstock.com/z/stock-vector-vector-cartoon-illustration-of-background-morning-jungle-bright-jungle-with-ferns-and-flowers-for-536303545.jpg");
     font-family: 'Rancho';
     color: white}
-
+div{
+  
+}
 img {
     height: 300px;
     width: 300px;
+    
+    
 }
 h3#timeLeft {
     -webkit-margin-before: -2em;
